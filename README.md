@@ -1,5 +1,7 @@
 # JavaScript--easy-CowboyGame
 
+[Demo ](http://www.basaksecmen.com/projects/p6/cowboyGame/html/)
+
 ## Rules
 
 On the map, 4 weapons are placed randomly and can be collected by players who pass through.
