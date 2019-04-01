@@ -1,0 +1,187 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto|Sancreek|Eczar:800');
+body{
+  background-image: url("../images/AmericanWestBackground.jpg");
+  background-size: cover;
+  background-repeat:   no-repeat;
+  background-position: top center; 
+  color: white;
+  font-family: 'Roboto', cursive !important;
+  font-size: 16px;
+}
+.bg-dark-tr {
+  background-color: rgba(0,0,0,0.6);
+}
+.bg-light-tr {
+  background-color: rgba(255,255,255,0.5);
+}
+
+.transparent{
+  opacity:0.7;
+}
+.opaque{
+  opacity:1;
+}
+.active {
+  box-shadow: 0 0 10px orange;
+}
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  font-family: 'Eczar', cursive;
+  font-size: 32px;
+  color: red;
+  line-height: 150px;
+  text-align: center;
+  position: relative;
+  margin: auto; 
+  border: 1px solid #131212;
+  box-shadow: 0 0 10px #000;
+}
+.minicircle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: white;
+  line-height: 50px;
+  text-align: center;
+  position: relative;
+  margin: auto; 
+  border: 1px solid #131212;
+  box-shadow: 0 0 10px #000;
+}
+.display-3 {
+  font-family: 'Sancreek', cursive !important; 
+}
+.playerInfo{
+  border-radius: 5px 30px 5px;
+  background: #5a4636d6;
+  margin: 10px 25px;
+  background-image: url("../images/background.jpg");
+  background-position: top center;
+}
+.fightBtnL {
+  background-image: url("../images/background.jpg");
+  background-position: top left; 
+  font-size: 30px;
+}
+.fightBtnR {
+  background-image: url("../images/background.jpg");
+  background-position: top right;
+  font-size: 30px;
+}
+#player1W1, #player1W2, #player1W3, #player1W4,
+#player2W1, #player2W2, #player2W3, #player2W4{
+  height: 80px;
+  float: left;
+}
+
+#p1scorediv, #p2scorediv {
+  padding: 15px 5px;
+  text-align: center;  text-shadow: 2px 2px #000;
+
+}
+#p1damage, #p2damage {
+  padding: 15px 5px;
+  font-family: 'Eczar', cursive;
+  text-align: center;
+  font-size: 28px;
+  color: #311908;
+  text-shadow: 2px 2px #b97f65;
+}
+
+
+#map {
+  margin-top: 25px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 604px;
+  height: 604px;
+  position: relative;
+  border:2px solid black;
+  background-image: url("../images/map.jpg");
+  background-size: cover;
+}
+#map img {
+  -webkit-filter: drop-shadow(2px 2px 1px #000);
+  filter: drop-shadow(2px 2px 1px #000);
+}
+.playerInfo img {
+  -webkit-filter: drop-shadow(5px 5px 5px #a77700);
+  filter: drop-shadow(5px 5px 5px #a77700);
+}
+.grid {
+  width: 60px;
+  height: 60px;
+  float:left;
+  border:1px solid grey;
+}
+
+.block {
+  background-image: url("../images/cactus.png");
+  box-shadow: 0 0 5px #000;
+  border: 1px solid #000;
+}
+
+.player1Moving {
+  background-image: url("../images/native.png");
+  background-size: auto 100%;
+  background-repeat:   no-repeat;
+  background-position: top center; 
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+.player2Moving {
+  background-image: url("../images/cowboy.png");
+   background-size: auto 100%;
+  background-repeat:   no-repeat;
+  background-position: top center; 
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+.knife {
+  background-image: url("../images/knife.png");
+}
+.axe {
+  background-image: url("../images/axe.png");
+}
+.arrow {
+  background-image: url("../images/arrow.png");
+}
+.gun {
+  background-image: url("../images/gun.png");
+}
+
+.range {
+  border: 2px solid #ffeb00;
+  box-shadow: 0 0 10px #000;
+  cursor: pointer;
+}
+.modal {
+  color: #000;
+}
+.modal-body   {
+    text-align: center !important;
+}
+.modal-title {
+  color: red;
+}
+#countdown{
+  color: red;
+  font-size: 45px;
+}
+span{
+  cursor: pointer;
+}
+
+.footer-bottom {
+    background-color: #15224f;
+    min-height: 30px;
+    width: 100%;
+}
+footer{
+  text-align: center;
+}

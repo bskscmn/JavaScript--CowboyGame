@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Game</title>
+</head>
+<body>
+  <div class="container-fluid">
+      <div class="row bg-dark-tr">
+        <h1 class="display-3 mx-auto mb-4 mt-3">Cowboy Game</h1>
+      </div>
+
+      <!-- Top Info -->
+      <div class="row bg-dark-tr">
+
+        <div class="col-sm playerInfo">
+          <div class="row">
+            <div class="col-sm-2" ><b>Player 1</b></div>
+            <div class="col-sm-2" ><img src="../images/native.png"  height="80"></img></div>
+            <div id="player1W1" class="col-sm-2"><b>Knife:</b>12<br><img src="../images/knife.png" width="40" id="player1knife" class="transparent"></img></div>
+            <div id="player1W2" class="col-sm-2"><b>Axe:</b>14<br><img src="../images/axe.png" width="40" id="player1axe" class="transparent"></img></div>
+            <div id="player1W3" class="col-sm-2"><b>Arrow:</b>16<br><img src="../images/arrow.png" width="40" id="player1arrow" class="transparent"></img></div>
+            <div id="player1W4" class="col-sm-2"><b>Gun:</b>18<br><img src="../images/gun.png" width="40" id="player1gun" class="transparent"></img></div>
+          </div>
+        </div>
+
+        <div class="col-sm playerInfo">
+          <div class="row">
+            <div class="col-sm-2" ><b>Player 2</b></div>
+            <div class="col-sm-2" ><img src="../images/cowboy.png"  height="80"></img></div>
+            <div id="player2W1" class="col-sm-2"><b>Knife:</b>12<br><img src="../images/knife.png" width="40" id="player2knife"  class="transparent"></img></div>
+            <div id="player2W2" class="col-sm-2"><b>Axe:</b>14<br><img src="../images/axe.png" width="40" id="player2axe" class="transparent"></img></div>
+            <div id="player2W3" class="col-sm-2"><b>Arrow:</b>16<br><img src="../images/arrow.png" width="40" id="player2arrow" class="transparent"></img></div>
+            <div id="player2W4" class="col-sm-2"><b>Gun:</b>18<br><img src="../images/gun.png" width="40" id="player2gun" class="transparent"></img></div>   
+          </div>
+        </div>
+
+      </div>  
+
+      <!--  Game Area -->
+      <div class="row bg-dark-tr">
+
+        <div class="col-sm-3 fightBtnL">
+          <div id="p1scorediv"><p><b>Life Point:</b></p><p id="player1LP" class="circle bg-light-tr"> 100</p></div>
+          <div id="p1damage"><p><b>Damage:</b><p id="player1damage" class="minicircle bg-dark-tr"> 10</p></p></div>
+          <input type="button" value="Attack" id="P1Attack" class="btn btn-danger btn-lg btn-block" disabled onclick="attack()"/>
+          <br>
+          <input type="button" value="Defend" id="P1Defend" class="btn btn-success btn-lg btn-block" disabled onclick="defend()"/>
+        </div>
+
+        <div class="col-sm-6 text-center">
+          <div id ="map">
+          <!--  game map comes here from js -->
+          </div>
+          <input TYPE="button" class="btn btn-warning mt-5" onClick="history.go(0)" VALUE="Restart">
+        </div>
+
+        <div class="col-sm-3 fightBtnR">
+          <div id="p2scorediv"><p><b>Life Point:</b></p><p id="player2LP" class="circle bg-light-tr"> 100</p></div>
+          <div id="p2damage"><p><b>Damage:</b><p id="player2damage" class="minicircle bg-dark-tr"> 10</p></p></div>
+          <input type="button" value="Attack" id="P2Attack" class="btn btn-danger btn-lg btn-block" disabled onclick="attack()"></input>
+          <br>
+          <input type="button" value="Defend" id="P2Defend" class="btn btn-success btn-lg btn-block" disabled onclick="defend()"></input>
+        </div>
+
+      </div>
+
+      <!--  Modals -->
+      <div class="modal fade" id="startModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Game Begins!</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <p>Starting!</p>
+                <p id="countdown5">5</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade-scale" id="fightModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Fight Begins!</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <p>Fight!</p>
+                <p id="countdown3">3</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="winnerModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Game Over!</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <p>The winner is</p>
+                <p><img src="" width="250" id="winner"></img></p>
+                <p></p>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal" onClick="history.go(0)">Close</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!--  Rules -->
+      <div class="row bg-dark-tr">
+        <div class="col-sm-8" style="text-align: left;">
+            <h1>Rules</h1>
+            
+            <p>On the map, 4 weapons are placed randomly and can be collected by players who pass through.</p>
+            <p>Each weapon has different damage inflicted between 12 and 18 points. The default weapon which team players inflict 10 points of damage.</p>
+            <p >The placement of the two players is also randomly on the map when the game loads.</p>
+            
+            <h3>Movements</h3>
+            <p>For each turn, a player can move from one to three boxes (horizontally or vertically) before ending their turn. They obviously can not pass through obstacles directly.</p>
+            <p>If a player passes over a box containing a weapon, they leave their current weapon on site and replace it with the new one.</p>
+            
+            <h3>Fight!</h3>
+            <p>If players cross over adjacent squares (horizontally or vertically), a battle begins.</p>
+            <p>During combat, the game works is as follows:</p>
+            <ul>
+              <li>Each player attacks in turn</li>
+              <li>The damage depends on the player's weapon</li>
+              <li>The player can choose to attack or defend against the next shot</li>
+              <li>If the player chooses to defend themselves, they sustain 50% less damage than normal</li>
+              <li>As soon as the life points of a player (initially 100) falls to 0, they lose.</li>
+            </ul>
+        </div>
+      </div>
+
+      <!--  Footer -->  
+      <footer>
+          Başak Seçmen © 2018
+      </footer>
+       
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <script src="../js/map.js"></script>
+  <script src="../js/game.js"></script>
+  <script src="../js/move.js"></script>
+  <script src="../js/fight.js"></script>
+  
+</body>
+</html>
