@@ -1,4 +1,4 @@
-# JavaScript--easy-CowboyGame
+# JavaScript-CowboyGame
 
 [Demo ](http://www.basaksecmen.com/projects/p6/cowboyGame/html/)
 
